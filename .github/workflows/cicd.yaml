@@ -4,7 +4,7 @@ on: push
 
 jobs:
   model-deployment:
-  runss-on: ubuntu-latest
+  runs-on: ubuntu-latest
   
   steps:
       - name: Checkout code
