@@ -141,7 +141,7 @@ def main():
                 mlflow.log_param(key, value)
             
             # Load model and vectorizer
-            model = load_model(os.path.join(root_dir, 'lgbm_model.pkl'))
+            model = load_model(os.path.join(root_dir, 'lgbm_model.pkl')) 
             vectorizer = load_vectorizer(os.path.join(root_dir, 'tfidf_vectorizer.pkl'))
 
             # Log model parameters
@@ -149,13 +149,15 @@ def main():
                 for param_name, param_value in model.get_params().items():
                     mlflow.log_param(param_name, param_value)
 
+            model_path = "lgbm_model"
+
             save_model_info(run.info.run_id, model_path, 'experiment_info.json')
 
 
             # Log model and vectorizer
             mlflow.sklearn.log_model(model, "lgbm_model")
 
-            model_path = "lgbm_model"
+            
 
             # Save model info
 
