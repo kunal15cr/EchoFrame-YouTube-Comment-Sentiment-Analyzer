@@ -36,7 +36,7 @@ def promote_model(model_name: str = "my_model", tracking_uri: str = None):
     try:
         tracking_uri = tracking_uri or os.getenv(
             "MLFLOW_TRACKING_URI",
-            "http://ec2-44-192-38-218.compute-1.amazonaws.com:5000/"
+            "http://ec2-35-172-150-63.compute-1.amazonaws.com:5000/"
         )
         mlflow.set_tracking_uri(tracking_uri)
         client = MlflowClient()

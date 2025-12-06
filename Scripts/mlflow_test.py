@@ -1,7 +1,7 @@
 import mlflow
 import random
 
-mlflow.set_tracking_uri("http://ec2-3-235-148-10.compute-1.amazonaws.com:5000/")
+mlflow.set_tracking_uri("http://ec2-35-172-150-63.compute-1.amazonaws.com:5000//")
 mlflow.set_experiment("Random Number Experiment")   
 
 with mlflow.start_run():
