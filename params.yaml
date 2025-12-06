@@ -1,5 +1,5 @@
 data_ingestion:
-  test_size: 0.2
+  test_size: 0.3
   
   
 model_building:
@@ -8,3 +8,6 @@ model_building:
   learning_rate: 0.08
   max_depth: 20
   n_estimators: 367
+
+AWS_TRACKING_URI: 
+  experiment_URI: "http://ec2-34-204-176-204.compute-1.amazonaws.com:5000"
