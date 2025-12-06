@@ -27,7 +27,7 @@ import matplotlib.dates as mdates
 # ---------------------------
 MLFLOW_TRACKING_URI = os.getenv(
     "MLFLOW_TRACKING_URI",
-    "http://ec2-3-229-124-18.compute-1.amazonaws.com:5000/"
+    "http://ec2-44-192-38-218.compute-1.amazonaws.com:5000/"
 )
 MODEL_NAME = os.getenv("MODEL_NAME", "my_model")
 MODEL_VERSION = os.getenv("MODEL_VERSION", "1")
