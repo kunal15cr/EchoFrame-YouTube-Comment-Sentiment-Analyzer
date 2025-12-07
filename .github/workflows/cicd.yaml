@@ -72,5 +72,28 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-east-1
         run: python Scripts/promote_model.py
+      
+      - name: Login to AWS ECR
+        if: success()
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 819087822149.dkr.ecr.us-east-1.amazonaws.com
+
+      - name: Build Docker image
+        if: success()
+        run: |
+          docker build -t echo-frame .
+
+      - name: Tag Docker image
+        if: success()
+        run: |
+          docker tag echo-frame:latest 819087822149.dkr.ecr.us-east-1.amazonaws.com/echo-frame:latest
+
+      - name: Push Docker image to AWS ECR
+        if: success()
+        run: |
+          docker push 819087822149.dkr.ecr.us-east-1.amazonaws.com/echo-frame:latest
+
 
       
