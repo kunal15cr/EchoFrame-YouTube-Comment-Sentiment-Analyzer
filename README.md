@@ -4,6 +4,10 @@
 
 EchoFrame is an ML-powered system that analyzes YouTube comments and classifies them into **positive, negative, or neutral sentiment**, with APIs for predictions and visual insights.
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-success)
+![MLflow](https://img.shields.io/badge/MLflow-Experiment_Tracking-0194E2)
+![DVC](https://img.shields.io/badge/DVC-Data_&_Pipeline-8A2BE2)
 ---
 
 ## 📌 Problem
